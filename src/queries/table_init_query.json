@@ -1,0 +1,163 @@
+{
+    "goal": "Generate a university student semester schedule based on the student's interests, courses, and daily chores.",
+    "instructions": [
+      "The actual input will be appended to the end of this prompt.",
+      "Output strictly in JSON objecr which should be able to parse into an object (no comments or introduction)",
+      "Output only the raw JSON text, starting exactly with { and ending exactly with }",
+      "The schedule should cover Monday through Friday.",
+      "The output name property should contain the same name from the input",
+      "Each day must have a schedule for 'morning', 'evening', and 'night' time slots.",
+      "Each time slot ('morning', 'evening', 'night') must contain a list of exactly 3 activities.",
+      "Activities must be generated based on the student's interests, courses, and daily chores provided in the input.",
+      "Fill schedule slots using relevant information from the input courses and interests.",
+      "Consider course difficulty: (no need to specify in output) Harder courses should appear more frequently during the week.",
+      "Include daily chores in the schedule, placed according to any time specified in the chore description (e.g., '6-7am' implies morning).",
+      "Chores should be distributed reasonably across the week.",
+      "Remove the chore timing in the output",
+      "Each activity should begin with a capital letter",
+      "Avoid adding common implicit tasks (like cooking, general eating) unless listed as a chore.",
+      "A maximum of 5 activities across the entire week's schedule can be designated as 'Free Time'.",
+      "For Free Time activities, the activity name must be exactly 'Free Time' and the type must be 'free'.",
+      "Every activity in the schedule must have an associated type, which must be one of: 'course', 'interest', 'chore', or 'free'.",
+      "The overall schedule should be balanced, showing a mix of courses, interests, and chores."
+    ],
+    "inputformat": {
+      "name": "<Student Name Placeholder>",
+      "courses": ["<University Course 1>", "<University Course 2>", "..."],
+      "interests": ["<Interest 1>", "<Interest 2>", "..."],
+      "chores": ["<Chore 1>", "<Chore 2>", "..."]
+    },
+    "outputformat": {
+      "name":"<Student Name from input>",
+      "monday": {
+        "morning": [
+          ["<course name placeholder>", "<type placeholder>"],
+          ["<course name placeholder>", "<type placeholder>"],
+          ["<Free Time placeholder>", "<type placeholder>"]
+        ],
+        "evening": [
+          ["<interest name placeholder>", "<type placeholder>"],
+          ["<course name placeholder>", "<type placeholder>"],
+          ["<interest name placeholder>", "<type placeholder>"]
+        ],
+        "night": [
+          ["<course name placeholder>", "<type placeholder>"],
+          ["<course name placeholder>", "<type placeholder>"],
+          ["<Free Time placeholder>", "free"]
+        ]
+      },
+      "tuesday": {
+          "morning": [ ["...", "..."], ["...", "..."], ["...", "..."] ],
+          "evening": [ ["...", "..."], ["...", "..."], ["...", "..."] ],
+          "night": [ ["...", "..."], ["...", "..."], ["...", "..."] ]
+      }
+    },
+    "exampleInput": {
+      "name": "Charlie",
+      "courses": [
+        "Linear Algebra",
+        "Discrete Math",
+        "Economics"
+      ],
+      "interests": [
+        "Statistics",
+        "Psychology 101",
+        "Physics I",
+        "Sociology"
+      ],
+      "chores": [
+        "reading 9-10pm",
+        "cleaning 5-6pm",
+        "laundry 3-4pm",
+        "gaming 8-10pm"
+      ]
+    },
+    "exampleOutput": {
+      "name": "Charlie",
+      "monday": {
+        "morning": [
+          ["Discrete Math", "course"],
+          ["Economics", "course"],
+          ["Free Time", "free"]
+        ],
+        "evening": [
+          ["Cleaning", "chore"],
+          ["Discrete Math", "course"],
+          ["Free Time", "free"]
+        ],
+        "night": [
+          ["Reading", "chore"],
+          ["Discrete Math", "course"],
+          ["Linear Algebra", "course"]
+        ]
+      },
+      "tuesday": {
+        "morning": [
+          ["Physics I", "interest"],
+          ["Free Time", "free"],
+          ["Linear Algebra", "course"]
+        ],
+        "evening": [
+          ["Laundry", "chore"],
+          ["Free Time", "free"],
+          ["Linear Algebra", "course"]
+        ],
+        "night": [
+          ["gaming", "chore"],
+          ["Economics", "course"],
+          ["Psychology 101", "interest"]
+        ]
+      },
+      "wednesday": {
+        "morning": [
+          ["Free Time", "free"],
+          ["Discrete Math", "course"],
+          ["Linear Algebra", "course"]
+        ],
+        "evening": [
+          ["Physics I", "interest"],
+          ["Linear Algebra", "course"],
+          ["Discrete Math", "course"]
+        ],
+        "night": [
+          ["Psychology 101", "interest"],
+          ["Physics I", "interest"],
+          ["Free Time", "free"]
+        ]
+      },
+      "thursday": {
+        "morning": [
+          ["Free Time", "free"],
+          ["Discrete Math", "course"],
+          ["Sociology", "interest"]
+        ],
+        "evening": [
+          ["Sociology", "interest"],
+          ["Free Time", "free"],
+          ["Psychology 101", "interest"]
+        ],
+        "night": [
+          ["Free Time", "free"],
+          ["Linear Algebra", "course"],
+          ["Psychology 101", "interest"]
+        ]
+      },
+      "friday": {
+        "morning": [
+          ["Discrete Math", "course"],
+          ["Statistics", "interest"],
+          ["Linear Algebra", "course"]
+        ],
+        "evening": [
+          ["Linear Algebra", "course"],
+          ["Discrete Math", "course"],
+          ["Free Time", "free"]
+        ],
+        "night": [
+          ["Sociology", "interest"],
+          ["Free Time", "free"],
+          ["Statistics", "interest"]
+        ]
+      }
+    }
+  }

@@ -1,0 +1,35 @@
+{
+    "goal": "Generate a paragraph that suggests a realistic shared activity based on the user's interest and another student's interest, during a common free time slot.",
+    "instructions": [
+      "The actual input will be appended to the end of this prompt.",
+      "Output must be in plain English, with good grammar and punctuation.",
+      "The paragraph should be strictly near 150 words.",
+      "Randomly choose one interest from the user's list and one from the other student's list.",
+      "The user is student 1. The paragraph should be addressed directly to them using 'you'.",
+      "Only mention the other student’s name (not the user's name).",
+      "Start by pointing out the selected interests of both students in a natural and clear way.",
+      "Then, mention the day and time when both students are free.",
+      "Suggest a fun, realistic activity that creatively combines both selected interests.",
+      "Make sure the activity feels personal and plausible—not generic or forced.",
+      "Avoid chores or course-related content—focus only on shared free time and interests.",
+      "The tone should be friendly and conversational, as if you're suggesting something useful and thoughtful."
+    ],
+    "inputformat": {
+      "name": "<Your Name>",
+      "interests": ["<Your Interest 1>", "<Your Interest 2>", "..."],
+      "courses": ["<Course 1>", "<Course 2>", "..."],
+      "chores": ["<Chore 1>", "<Chore 2>", "..."],
+      "monday": {
+        "morning": [["<activity>", "<type>"], ["<activity>", "<type>"], ["<activity>", "<type>"]],
+        "evening": [["<activity>", "<type>"], ["<activity>", "<type>"], ["<activity>", "<type>"]],
+        "night": [["<activity>", "<type>"], ["<activity>", "<type>"], ["<activity>", "<type>"]]
+      },
+      "tuesday": {
+        "morning": [["<activity>", "<type>"], ["<activity>", "<type>"], ["<activity>", "<type>"]],
+        "evening": [["<activity>", "<type>"], ["<activity>", "<type>"], ["<activity>", "<type>"]],
+        "night": [["<activity>", "<type>"], ["<activity>", "<type>"], ["<activity>", "<type>"]]
+      }
+    },
+    "outputformat": "[A short, friendly paragraph addressed to 'you' (start with it seems) that highlights your shared interests and free time with another student, and suggests a realistic activity to do together. Mention only the second student’s name. Make the suggestion feel relevant, thoughtful, and specific.]"
+  }
+  
