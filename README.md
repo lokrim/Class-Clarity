@@ -36,6 +36,11 @@ One of the key features of Class Clarity is Guided Matching — it analyzes stud
 
 6) Use the Semester Schedule and Guided Matching features.
 
+### 🧑‍🤝‍🧑 Some Example dummy students
+Steve, Bob, Fiona, Ivan, Ahmed
+
+use these if you just want to test the schedule and guided matching features.
+
 #### ⚠️ Important Notes
 To get the best results, use course names that match the dummy data currently used by the system. The matching algorithm works best with the following course titles:
 
